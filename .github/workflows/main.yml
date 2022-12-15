@@ -1,0 +1,17 @@
+name: Upload Website
+
+on:
+  push:
+    branches:
+        - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run script file
+        run: |
+          chmod +x ./s3-deploy.sh
+          ./s3-deploy.sh
+        shell: bash

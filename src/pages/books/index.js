@@ -28,6 +28,7 @@ const app = async () => {
 
 
 const getCurrentUserOrRedirect = async () => {
+    // TODO: плохо что сначала не проверяется есть ли в localStorage ключ
     try {
         return await Api.authMe();
     } catch {
