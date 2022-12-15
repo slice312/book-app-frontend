@@ -1,0 +1,59 @@
+.default-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    border-radius: 10px;
+    background-color: white;
+    @include font-default(400, 15px, auto, black);
+
+    &__title {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    &__field {
+        position: relative;
+        width: 100%;
+
+        input {
+            margin-top: 3px;
+            width: 100%;
+            padding: 5px 20px;
+            background: #FFFFFF;
+            border: 1px solid #B1B1B1;
+            border-radius: 5px;
+            font-size: 20px;
+            line-height: 30px;
+
+            &::placeholder {
+                color: #B1B1B1;
+            }
+        }
+
+        input.input_error {
+            border: 1px solid #CF4747;
+        }
+
+        label {
+            width: 100%;
+            font-size: 17px;
+        }
+    }
+
+    &__err-label {
+        position: absolute;
+        color: #CF4747;
+        left: 0;
+        top: 67px;
+        font-size: 15px;
+    }
+
+    &__btn-submit {
+        margin-top: 10px;
+        padding: 5px 0;
+        font-size: 20px;
+        line-height: 30px;
+    }
+}

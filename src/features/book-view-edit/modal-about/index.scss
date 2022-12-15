@@ -1,0 +1,169 @@
+.modal-about {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 50;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    &__wrapper {
+        max-width: 800px;
+        min-height: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 15px;
+    }
+
+    &__container {
+        width: 100%;
+        position: relative;
+        padding: 15px 25px 50px 25px;
+        border-radius: 10px;
+        color: black;
+        background-color: white;
+        box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+    }
+
+    &__content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+        border-width: 0;
+        @include font-default(400, 20px, normal, black);
+    }
+
+    &__btn-close {
+        position: absolute;
+        padding: 5px;
+        color: white;
+        top: 0;
+        right: 0;
+    }
+
+    &__title {
+        width: 100%;
+        font-size: 44px;
+        line-height: 66px;
+        text-align: center;
+    }
+
+    &__book-title {
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 60px;
+    }
+
+    &__author {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    &__props {
+        margin-top: 50px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__props-col {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        p {
+            color: #555557;
+        }
+    }
+
+    &__prop-label {
+        font-weight: 500;
+        color: black;
+    }
+
+    &__buttons {
+        margin-top: 80px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+    }
+
+    &__btn-edit {
+        align-self: center;
+        padding: 5px 120px;
+        font-size: 20px;
+        line-height: 30px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .modal-about {
+        &__content {
+            font-size: 17px;
+        }
+
+        &__title {
+            font-size: 35px;
+            line-height: 50px;
+        }
+
+        &__book-title {
+            font-size: 32px;
+            line-height: 38px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .modal-about {
+        &__container {
+            padding-bottom: 25px;
+        }
+
+        &__props {
+            margin-top: 30px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        &__props-col {
+            gap: 15px;
+        }
+
+        &__buttons {
+            margin-top: 30px;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
+    }
+}
+
+
+@media (max-width: 450px) {
+    .modal-about {
+        &__title {
+            font-size: 30px;
+            line-height: 50px;
+        }
+
+        &__book-title {
+            font-size: 22px;
+            line-height: 30px;
+        }
+
+        &__btn-edit {
+            padding: 5px 70px;
+        }
+    }
+}

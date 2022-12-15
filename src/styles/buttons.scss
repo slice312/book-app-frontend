@@ -1,0 +1,46 @@
+.btn-default {
+    @include font-default(400, 15px, normal, white);
+    padding: 5px;
+    background-color: $color-element-main;
+    text-align: center;
+    border-radius: 12px;
+
+    &:hover {
+        transition: 0.12s;
+        background-color: #51A1B9;
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+
+    &:disabled {
+        pointer-events: none;
+        background-color: gray;
+        color: #DAD8D8;
+    }
+}
+
+
+.btn-square {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EDEDED;
+    border-radius: 12px;
+
+    &:active {
+        transform: scale(0.97);
+    }
+
+    &:hover {
+        transition: 0.12s;
+        background-color: #BBC5C7;
+
+        svg * {
+            filter: grayscale(30%);
+        }
+    }
+}

@@ -1,0 +1,12 @@
+# private
+.env
+
+# npm
+node_modules/
+package-lock.json
+
+# Webpack
+dist/
+
+# WebStorm
+.idea/

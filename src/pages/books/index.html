@@ -1,0 +1,40 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Books App</title>
+</head>
+<body>
+
+<div class="books-page">
+    <div class="container books-page__container">
+        <header class="nav-header">
+            <div class="nav-header__user-wrap">
+                <span class="nav-header__user-avatar"></span>
+                <span class="nav-header__user-name" id="nav-header-username">
+                    Username
+                 </span>
+            </div>
+            <a class="nav-header__link" id="header-logout-link" href="#">
+                Logout
+            </a>
+        </header>
+
+        <h1 class="books-page__title">
+            Your Books
+        </h1>
+
+        <p class="books-page__empty-msg" id="book-page-empty-msg">
+        </p>
+        <div class="books-page__list" id="book-list">
+            <!-- Заполняется из скрипта -->
+        </div>
+        <button class="btn-default books-page__btn-add" id="books-page-btn-add-book" type="button">
+            Add Book
+        </button>
+    </div>
+</div>
+</body>
+</html>

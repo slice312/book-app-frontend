@@ -1,0 +1,101 @@
+.books-page {
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 20px;
+    background-color: $color-bg-main;
+    @include font-default(400, 15px, auto, black);
+
+    .nav-header {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 64px;
+        padding: 24px 56px;
+
+        &__user-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+        }
+
+        &__user-avatar {
+            height: 32px;
+            width: 32px;
+            display: inline-block;
+            background-color: $color-element-main;
+            border-radius: 50%;
+        }
+
+        &__user-name {
+            font-size: 18px;
+            line-height: 27px;
+        }
+
+        &__link {
+            color: $color-element-main;
+            font-size: 18px;
+            line-height: 27px;
+            text-decoration: underline;
+            cursor: pointer;
+
+            &:hover {
+                color: #80B1C9;
+            }
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title {
+        margin-top: 25px;
+        font-size: 44px;
+        line-height: 66px;
+        text-align: center;
+    }
+
+    &__empty-msg {
+        margin-top: 25px;
+        font-size: 33px;
+        line-height: 66px;
+        text-align: center;
+    }
+
+    &__list {
+        max-width: 1040px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        padding: 40px 50px;
+    }
+
+    &__btn-add {
+        align-self: center;
+        padding: 5px 120px;
+        font-size: 20px;
+        line-height: 30px;
+    }
+}
+
+
+@media (max-width: 475px) {
+    .books-page {
+        &__title {
+            font-size: 38px;
+        }
+
+        .book-list {
+            padding-top: 30px;
+        }
+    }
+}
+
+
+

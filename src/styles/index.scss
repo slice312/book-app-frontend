@@ -1,0 +1,22 @@
+@import "./null";
+@import "./vars";
+@import "./mixins";
+@import "./buttons";
+@import "./forms";
+@import "./common";
+
+@import "/src/pages/login";
+@import "/src/pages/register";
+@import "/src/pages/books";
+
+@import "/src/features/book-view-edit/modal-about";
+@import "/src/features/book-view-edit/modal-edit";
+@import "/src/features/book-view-edit/modal-create";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
