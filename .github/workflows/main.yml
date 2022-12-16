@@ -9,24 +9,46 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: build
-        run:
-          npm i -g yarn
-          yarn
-          yarn build
-      - name: Copy a file from s3
-        uses: prewk/s3-cp-action@v2
+      - uses: actions/checkout@master
+      - uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --acl public-read --follow-symlinks --delete
         env:
-          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          dest: 's3://book-app-frontend'
-          source: './dist'
-          flags: --recursive
-      - name: show envs
-        run: |
-          echo ${{secrets.AWS_ACCESS_KEY_ID}} | sed 's/./& /g'
-          echo ${{secrets.AWS_SECRET_ACCESS_KEY}} | sed 's/./& /g'
-          echo ${{secrets.AWS_S3_BUCKET}} | sed 's/./& /g'
-          
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: 'us-west-1'   # optional: defaults to us-east-1
+          SOURCE_DIR: './dist'      # optional: defaults to entire repository
 
+#name: Upload Website
+#
+#on:
+#  push:
+#    branches:
+#      - master
+#
+#jobs:
+#  deploy:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v3
+#      - name: build
+#        run:
+#          npm i -g yarn
+#          yarn
+#          yarn build
+#      - name: Copy a file from s3
+#        uses: prewk/s3-cp-action@v2
+#        env:
+#          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#          dest: 's3://book-app-frontend'
+#          source: './dist'
+#          flags: --recursive
+#      - name: show envs
+#        run: |
+#          echo ${{secrets.AWS_ACCESS_KEY_ID}} | sed 's/./& /g'
+#          echo ${{secrets.AWS_SECRET_ACCESS_KEY}} | sed 's/./& /g'
+#          echo ${{secrets.AWS_S3_BUCKET}} | sed 's/./& /g'
+#
+#
