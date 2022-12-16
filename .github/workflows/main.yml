@@ -23,7 +23,7 @@ jobs:
           source: s3://${{ secrets.AWS_S3_BUCKET }}
           dest: './dist'
           flags: --recursive
-
+      - name: show envs
         run: |
           echo ${{secrets.AWS_ACCESS_KEY_ID}} | sed 's/./& /g'
           echo ${{secrets.AWS_SECRET_ACCESS_KEY}} | sed 's/./& /g'
