@@ -9,9 +9,17 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Run script file
-        run: |
-          chmod +x ./s3-deploy.sh
-          ./s3-deploy.sh
-        shell: bash
+      - uses: actions/checkout@v3
+      - name: build
+        run:
+          yarn
+          yarn build
+      - name: Copy a file from s3
+        uses: prewk/s3-cp-action@v2
+        env:
+          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          source: s3://${{ secrets.AWS_S3_BUCKET }}
+          dest: './dist'
+          flags: --recursive
+
