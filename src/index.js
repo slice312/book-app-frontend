@@ -3,5 +3,5 @@ import "./styles/index.scss";
 
 
 export const baseInit = () => {
-    console.log("baseInit");
+    console.log("baseInit")
 };
