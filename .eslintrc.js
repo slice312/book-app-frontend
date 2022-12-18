@@ -5,6 +5,12 @@ module.exports = {
         ecmaVersion: 13
     },
     plugins: ["import"],
+    // ignorePatterns: [
+    //     .git/
+    //     .idea/
+    //     node_modules/
+    //     dist/
+    // ],
     rules: {
         "max-len": ["warn", 150],
         "max-statements-per-line": ["warn", {max: 1}],
